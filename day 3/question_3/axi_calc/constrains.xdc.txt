@@ -1,0 +1,10 @@
+create_pblock pblock_rp_inst
+add_cells_to_pblock [get_pblocks pblock_rp_inst] [get_cells rp_inst]
+
+resize_pblock [get_pblocks pblock_rp_inst] -add {SLICE_X20Y50:SLICE_X49Y99}
+resize_pblock [get_pblocks pblock_rp_inst] -add {DSP48_X1Y20:DSP48_X1Y39}
+resize_pblock [get_pblocks pblock_rp_inst] -add {RAMB18_X1Y20:RAMB18_X1Y39}
+resize_pblock [get_pblocks pblock_rp_inst] -add {RAMB36_X1Y10:RAMB36_X1Y19}
+
+set_property RESET_AFTER_RECONFIG true [get_pblocks pblock_rp_inst]
+set_property SNAPPING_MODE ON [get_pblocks pblock_rp_inst]
